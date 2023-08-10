@@ -1,7 +1,7 @@
-import React from 'react';
+import SampleSortable from './sample-sortable';
 
 function App() {
-  return <div className='App'>Hello!</div>;
+  return <SampleSortable />;
 }
 
 export default App;
