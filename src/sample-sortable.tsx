@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import { useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 
@@ -16,10 +17,31 @@ const SampleSortable = () => {
   ]);
 
   return (
-    <div>
+    <div
+      className='sample-sortable'
+      css={{
+        '> div': {
+          display: 'flex',
+          flexDirection: 'column',
+          listStyle: 'none',
+          gap: '8px',
+          maxWidth: '200px',
+          fontSize: '20px',
+          userSelect: 'none',
+
+          '> .sortable-item': {
+            padding: '8px',
+            borderRadius: '4px',
+            backgroundColor: '#acacac'
+          }
+        }
+      }}
+    >
       <ReactSortable list={state} setList={setState}>
         {state.map(item => (
-          <div key={`list-${item.id}`}>{item.name}</div>
+          <div className='sortable-item' key={`list-${item.id}`}>
+            {item.name}
+          </div>
         ))}
       </ReactSortable>
     </div>
